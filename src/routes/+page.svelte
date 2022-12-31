@@ -25,7 +25,7 @@
   }
 
   async function createUser() {
-    if (name == "" || nickName == "") throw new Error("name or nickName 없음");
+    if (!name || !nickName) throw new Error("name or nickName 없음");
 
     let res = await POST(name, nickName);
 
