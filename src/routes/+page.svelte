@@ -8,6 +8,7 @@
   let nickName = "";
   let numberArray = [];
   let currentPage = 0;
+  let totalPage = 0;
 
   async function getList(page) {
     const res = await GET(page);
@@ -16,6 +17,7 @@
     if (res.ok) {
       numberArray = [...Array(json.totalPage).keys()].map(x => x + 1);
       currentPage = json.currentPage;
+      totalPage = json.totalPage;
       return json;
     } else {
       throw new Error("백엔드 서버 에러");
@@ -72,7 +74,7 @@
     </tbody>
 </table>
 
-<Pagination {numberArray} {currentPage} on:move={handlerPageMove}/>
+<Pagination {numberArray} {currentPage} {totalPage} on:move={handlerPageMove}/>
 
 <div id="page-div">
 
