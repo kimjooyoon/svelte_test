@@ -7,6 +7,6 @@
  */
 export function IntArrayBySize(size) {
   const re = /^[0-9]+$/;
-  if( !re.test("" + size) ) return []
+  if (!re.test("" + size)) return [];
   return [...Array(size).keys()].map(x => x + 1);
 }

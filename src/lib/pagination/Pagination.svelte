@@ -1,14 +1,15 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-    export let numberArray = []
-    export let currentPage = 0
-    export let totalPage = 0
+  import {createEventDispatcher} from "svelte";
 
-    const dispatch = createEventDispatcher();
+  export let numberArray = [];
+  export let currentPage = 0;
+  export let totalPage = 0;
 
-    function btnClick(page) {
-      dispatch('move',{page})
-    }
+  const dispatch = createEventDispatcher();
+
+  function btnClick(page) {
+    dispatch("move", {page});
+  }
 </script>
 
 

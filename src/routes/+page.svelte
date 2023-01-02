@@ -16,7 +16,7 @@
     const json = await res.json();
 
     if (res.ok) {
-      numberArray = IntArrayBySize(json.totalPage)
+      numberArray = IntArrayBySize(json.totalPage);
       currentPage = json.currentPage;
       totalPage = json.totalPage;
       return json;
@@ -42,7 +42,7 @@
   }
 
   function handlerPageMove(event) {
-    promise = getList(event.detail.page)
+    promise = getList(event.detail.page);
   }
 
 </script>
