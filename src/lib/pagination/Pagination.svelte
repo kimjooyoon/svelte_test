@@ -7,10 +7,7 @@
     const dispatch = createEventDispatcher();
 
     function btnClick(page) {
-      dispatch('move',{
-        page:page
-        }
-      )
+      dispatch('move',{page})
     }
 </script>
 
