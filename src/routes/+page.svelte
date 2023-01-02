@@ -50,8 +50,10 @@
 </script>
 
 <h2>나는 너무 대단해 홀리 몰리</h2>
+
 이름:<input type="text" bind:value={name}>
 닉네임:<input type="text" bind:value={nickName}>
+
 <button on:click={createUser}>
     추가
 </button>
