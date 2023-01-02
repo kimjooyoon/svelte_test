@@ -15,3 +15,5 @@ export async function POST(name, nickName) {
     body: JSON.stringify({name, nickName})
   });
 }
+
+
