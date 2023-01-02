@@ -1,4 +1,5 @@
 <script>
+  import {IntArrayBySize} from "$lib/functions/NumberUtil.js";
   import Pagination from "$lib/pagination/Pagination.svelte";
   import {GET, POST} from "./+server.js";
 
@@ -15,7 +16,7 @@
     const json = await res.json();
 
     if (res.ok) {
-      numberArray = [...Array(json.totalPage).keys()].map(x => x + 1);
+      numberArray = IntArrayBySize(json.totalPage)
       currentPage = json.currentPage;
       totalPage = json.totalPage;
       return json;
