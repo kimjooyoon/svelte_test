@@ -9,18 +9,20 @@
   let name = "";
   let nickName = "";
 
-  let numberArray = [];
-  let currentPage = 0;
-  let totalPage = 0;
+  let array = [];
+  let current = 0;
+  let total = 0;
 
   async function getList(page) {
     const res = await GET(page);
     const json = await res.json();
 
     if (res.ok) {
-      numberArray = IntArrayBySize(json.totalPage);
-      currentPage = json.currentPage;
-      totalPage = json.totalPage;
+      const {totalPage, currentPage} = json
+
+      array = IntArrayBySize(totalPage);
+      current = currentPage;
+      total = totalPage;
       return json;
     } else {
       throw new Error("백엔드 서버 에러");
@@ -60,4 +62,4 @@
 
 <NameTable {promise}/>
 
-<Pagination {numberArray} {currentPage} {totalPage} on:move={handlerPageMove}/>
+<Pagination {array} {current} {total} on:move={handlerPageMove}/>
