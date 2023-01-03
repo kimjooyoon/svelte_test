@@ -18,7 +18,7 @@
     const json = await res.json();
 
     if (res.ok) {
-      const {totalPage, currentPage} = json
+      const {totalPage, currentPage} = json;
 
       array = IntArrayBySize(totalPage);
       current = currentPage;
