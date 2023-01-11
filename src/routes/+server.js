@@ -11,7 +11,7 @@ export async function GET(page) {
 export async function POST(name, nickName) {
   return await fetch(url, {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    headers: {"Content-Type": "application/json","Accept":"*/*"},
     body: JSON.stringify({name, nickName})
   });
 }
